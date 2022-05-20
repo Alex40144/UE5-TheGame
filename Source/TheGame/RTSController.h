@@ -13,7 +13,8 @@ UCLASS()
 class THEGAME_API ARTSController : public APlayerController
 {
 	GENERATED_BODY()
-
+protected:
+	virtual void BeginPlay() override;
 public:
 	virtual void SetupInputComponent() override;
 
@@ -25,9 +26,30 @@ public:
 
 	void RotateCamera(float dist);
 
-	UPROPERTY(EditAnywhere)
+	void RotateCameraLR(float dist);
+	void RotateCameraUD(float dist);
+
+	void SwitchCameraMode();
+	void Jump();
+
+
 	int cameraMoveSpeed = 1200;
-	int cameraZoomSpeed = 100;
 	int cameraRotationSpeed = 100;
+
+	int cameraZoomDist = 100;
+
+	int maxZoom = 3000;
+	int minZoom = 700;
+
+	int maxPitch = -15;
+	int minPitch = -60;
 	
+
+	bool bCameraRTSMode = true;
+	
+	UPROPERTY()
+	class AFPSCamera* FPSCamera;
+
+	UPROPERTY()
+	class ARTSCamera* RTSCamera;
 };
