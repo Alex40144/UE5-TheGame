@@ -151,8 +151,9 @@ void ARTSController::SwitchCameraMode()
         UE_LOG(LogTemp, Warning, TEXT("Posess FPS"));
         FPSCamera->SetActorLocation(RTSCamera->GetActorLocation());
         Possess(FPSCamera);
-        this->bShowMouseCursor = false;
+        bShowMouseCursor = false;
         bEnableClickEvents = true;
+        bEnableMouseOverEvents = true;
     }
     else
     {
@@ -160,6 +161,8 @@ void ARTSController::SwitchCameraMode()
         RTSCamera->SetActorLocation(FPSCamera->GetActorLocation());
         Possess(RTSCamera);
         bShowMouseCursor = true;
+        bEnableClickEvents = true;
+        bEnableMouseOverEvents = true;
     }
     bCameraRTSMode = !bCameraRTSMode;
 }

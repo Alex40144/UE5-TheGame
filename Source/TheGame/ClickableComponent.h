@@ -24,10 +24,13 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	UFUNCTION()
 	void OnClicked(UPrimitiveComponent* ClickedComp, FKey a);
 
+	UFUNCTION()
 	void OnBeginCursorOver(UPrimitiveComponent* a);
 
+	UFUNCTION()
 	void OnEndCursorOver(UPrimitiveComponent* a);
 
 	bool bClicked;

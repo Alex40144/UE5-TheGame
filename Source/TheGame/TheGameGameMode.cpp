@@ -3,6 +3,7 @@
 #include "TheGameGameMode.h"
 #include "RTSController.h"
 #include "RTSCamera.h"
+#include "HUDController.h"
 #include "UObject/ConstructorHelpers.h"
 
 ATheGameGameMode::ATheGameGameMode()
@@ -11,4 +12,6 @@ ATheGameGameMode::ATheGameGameMode()
 	PlayerControllerClass = ARTSController::StaticClass();
 	
 	DefaultPawnClass = ARTSCamera::StaticClass();
+
+	HUDClass = AHUDController::StaticClass();
 }

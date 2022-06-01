@@ -34,7 +34,7 @@ public:
 
 
 	int cameraMoveSpeed = 1200;
-	int cameraRotationSpeed = 100;
+	int cameraRotationSpeed = 150;
 
 	int cameraZoomDist = 100;
 
