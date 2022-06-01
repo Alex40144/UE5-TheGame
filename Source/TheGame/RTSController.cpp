@@ -152,7 +152,7 @@ void ARTSController::SwitchCameraMode()
         FPSCamera->SetActorLocation(RTSCamera->GetActorLocation());
         Possess(FPSCamera);
         this->bShowMouseCursor = false;
-        FPSCamera->EnableInput(this);
+        bEnableClickEvents = true;
     }
     else
     {
